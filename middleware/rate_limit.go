@@ -9,7 +9,7 @@ import (
 
 func RateLimitMiddleware(app *gin.Engine) {
 	limiter := ratelimit.RateLimiter(ratelimit.InMemoryStore(&ratelimit.InMemoryOptions{
-		Rate:  1 * time.Second,
+		Rate:  5 * time.Second,
 		Limit: 100,
 	}), &ratelimit.Options{
 		ErrorHandler: internal.ErrorHandler,

@@ -1,5 +1,11 @@
 package api_model
 
 type Generate struct {
-	Email string `json:"email"`
+	Desc string  `json:"desc"`
+	Type int     `json:"type"`
+	Lang *string `json:"lang"`
+}
+
+type Get struct {
+	ID string `json:"id"`
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{template "head.html"}}
+</head>
+<body style="background:#1b1b1b" class="font-mono">
+<div class="container p-4 mx-auto max-w-screen-md md:py-12 h-full">
+    <div class="flex flex-wrap">
+        <h1 class="text-2xl font-bold mb-5 p-1 flex items-center text-gray-100">regex <span class="rounded ml-1 px-1 h-8" style="background:#FF9900;color:#1b1b1b">f*ck!</span></h1>
+        <span class="ml-auto my-2 text-gray-300 text-xs hidden md:block">this ai tool(gpt-3.5) is for those who hate regex!</span>
+    </div>
+    <div style="background:#dddddd" class="p-6 rounded-sm shadow-lg">
+        <form>
+            <div>
+                <label for="message" class="block text-black text-xs font-semibold mb-2">what do you need?</label>
+                <textarea id="message" name="message" rows="3" class="w-full px-2 py-1 text-black text-xs border rounded-sm focus:outline-none focus:shadow-outline" required
+placeholder="email validator
+turkey phone number validator
+select only all digits" autofocus></textarea>
+
+            </div>
+            <button style="background: #f90" type="submit" class="w-full py-1 text-sm font-semibold text-black rounded-xs shadow-md focus:outline-none focus:shadow-outline disabled:opacity-60">f*ck!</button>
+        </form>
+
+        <div style="background:#fff518a1" id="response" class="mt-6 p-2  border border-black rounded-xs">
+            <div class="flex flex-wrap">
+                <h3 class="font-semibold text-xs mb-2 border-gray-600">response:</h3>
+                <button id="reportBtn" class="ml-auto text-xs mr-2 text-gray-700 hover:text-black disabled:opacity-10">report</button>
+                <button id="copyBtn" class="text-xs text-gray-700 hover:text-black disabled:opacity-10">copy</button>
+            </div>
+            <p id="responseText" class="text-sm">
+                <span class="text-gray-700">waiting for your request...</span>
+            </p>
+        </div>
+
+        <div style="background:#c4c4c4" id="details" class="p-2 rounded-xs text-xs hidden md:block">
+            <div class="flex flex-wrap">
+                <div class="flex-auto">id:<input id="responseId" type="text" value="" readonly></div>
+                <div class="flex-auto">token usage:<input id="responseCredit" type="text" value="" readonly></div>
+                <div class="flex-auto">response date:<input id="responseTime" type="text" value="" readonly></div>
+            </div>
+        </div>
+
+        <div style="background:rgba(252,252,252,0.63)" class="mt-2 p-2 border border-black rounded-xs">
+            <div class="flex flex-wrap">
+                <h3 class="font-semibold text-xs mb-2 border-gray-600">latest:</h3>
+                <button id="refreshBtn" class="ml-auto text-xs text-gray-700 hover:text-black disabled:opacity-10">refresh</button>
+            </div>
+            <ul id="latest" class="divide-y divide-black text-xs truncate"></ul>
+        </div>
+    </div>
+    <div class="flex flex-wrap">
+        <a href="https://twitter.com/sercanarga" target="_blank" class="flex-auto my-2 text-gray-600 text-xs">twitter/@sercanarga</a>
+        <a href="https://github.com/fuckregex" target="_blank" class="flex-auto text-right my-2 text-gray-600 text-xs">github/fuckregex</a>
+    </div>
+</div>
+{{template "script.html"}}
+</body>
+</html>
