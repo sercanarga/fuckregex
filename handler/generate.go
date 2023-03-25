@@ -6,6 +6,7 @@ import (
 	"fuckregex/model/api_model"
 	"fuckregex/model/db_model"
 	"github.com/gin-gonic/gin"
+	"github.com/microcosm-cc/bluemonday"
 	"log"
 	"time"
 )
@@ -42,9 +43,11 @@ func Generate(ctx *gin.Context) {
 		return
 	}
 
+	p := bluemonday.StripTagsPolicy()
+
 	createResponse := db_model.Responses{
 		ID:            aiRequest.ID,
-		InputText:     req.Desc,
+		InputText:     p.Sanitize(req.Desc),
 		ResponseText:  aiRequest.Choices[0].Message.Content,
 		CreatedDate:   aiRequest.ResponseTime,
 		ResponseToken: aiRequest.Usage.TotalToken,
