@@ -14,7 +14,7 @@ const printError = (error) => {
 const printResponse = (responseText, responseId, responseToken, ResponseTime) => {
     updateUrlID(responseId);
     showReportBtn();
-    document.querySelector("#responseText").innerHTML = marked.parse(responseText);
+    document.querySelector("#responseText").innerHTML = responseText;
     document.querySelector("#details #responseId").value = responseId;
     document.querySelector("#details #responseCredit").value = responseToken;
     document.querySelector("#details #responseTime").value = ResponseTime;
