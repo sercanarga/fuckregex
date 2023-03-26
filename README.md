@@ -37,6 +37,9 @@ nano .env
 ```
 
 4. Create a postgresql database using the sql file under the `resources` directory.
+```bash
+cat resources/*.sql
+```
 
 5. Install dependencies:
 
