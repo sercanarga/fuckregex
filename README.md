@@ -1,10 +1,69 @@
 # fuckregex
-this ai tool(gpt-3.5) is for those who hate regex!
 
-### to-do's
-- [ ] security problems will be improved
-- [ ] the submitted request will be checked for moderation in chatgpt
-- [ ] will add the ability to interpret the entered regex
-- [ ] will introduce the ability to validate generated regex
-- [ ] generate examples in programming languages for the generated regex
-- [ ] design and source code will be improved
+A user-friendly AI-powered tool for those who hate writing regular expressions! Powered by GPT-3.5, FuckRegex helps you generate regex patterns without the headache.
+
+## Features
+
+* Generate regex patterns with natural language input
+* Interpret entered regex for better understanding
+* Validate generated regex patterns
+* Generate regex usage examples in popular programming languages
+
+## Getting Started
+
+These instructions will help you set up and run the project on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) installed on your system:
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/fuckregex.git
+````
+
+2. Change to the project directory:
+
+```bash
+cd fuckregex
+```
+
+3. Install dependencies:
+
+```bash
+go mod tidy
+```
+
+4. Run the project:
+
+```bash
+go run main.go
+```
+
+5. Open your web browser and visit `http://localhost:PORT` (replace `PORT` with the port number specified in the configuration).
+
+## Usage
+
+1. (Add a step-by-step guide on how to use the application)
+2. ...
+3. ...
+
+## Contributing
+
+We welcome contributions! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute to this project.
+
+## To-Do
+
+- [ ] Improve security measures
+- [ ] Implement request moderation for ChatGPT submissions
+- [ ] Add the ability to interpret entered regex
+- [ ] Introduce regex validation for generated patterns
+- [ ] Generate regex usage examples in popular programming languages
+- [ ] Enhance design and source code
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
