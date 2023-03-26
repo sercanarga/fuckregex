@@ -39,7 +39,12 @@ func init() {
 }
 
 func main() {
-	gin.SetMode(gin.DebugMode)
+	if os.Getenv("DEBUG") == "true" {
+		gin.SetMode(gin.DebugMode)
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
 	app := gin.Default()
 
 	app.Use(cors.New(cors.Config{

@@ -21,14 +21,14 @@ func Latest(ctx *gin.Context) {
 		return
 	}
 
-	asd := ""
+	list := ""
 
 	for _, response := range responses {
-		asd += fmt.Sprintf(
+		list += fmt.Sprintf(
 			"<li class='flex items-center'><a href='/?id=%s' class='truncate'>%s</a> <span class='text-gray-700 ml-auto'>%d</span></li>", response.ID, response.InputText, response.CreatedDate)
 	}
 
 	ctx.JSON(200, api_model.APIResponse{
-		ResponseText: asd,
+		ResponseText: list,
 	})
 }

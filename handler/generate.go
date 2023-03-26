@@ -14,7 +14,10 @@ import (
 func Generate(ctx *gin.Context) {
 	var req api_model.Generate
 	err := ctx.BindJSON(&req)
-	if err != nil /*|| req.Desc == "" || req.Type == 0*/ {
+	p := bluemonday.StripTagsPolicy()
+	userInput := p.Sanitize(req.Desc)
+
+	if err != nil || userInput == "" {
 		ctx.JSON(400, api_model.APIError{
 			ErrorCode:    400,
 			ErrorMessage: "Invalid format",
@@ -43,11 +46,9 @@ func Generate(ctx *gin.Context) {
 		return
 	}
 
-	p := bluemonday.StripTagsPolicy()
-
 	createResponse := db_model.Responses{
 		ID:            aiRequest.ID,
-		InputText:     p.Sanitize(req.Desc),
+		InputText:     userInput,
 		ResponseText:  aiRequest.Choices[0].Message.Content,
 		CreatedDate:   aiRequest.ResponseTime,
 		ResponseToken: aiRequest.Usage.TotalToken,

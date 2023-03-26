@@ -13,6 +13,7 @@ const printError = (error) => {
 
 const printResponse = (responseText, responseId, responseToken, ResponseTime) => {
     updateUrlID(responseId);
+    showReportBtn();
     document.querySelector("#responseText").innerHTML = marked.parse(responseText);
     document.querySelector("#details #responseId").value = responseId;
     document.querySelector("#details #responseCredit").value = responseToken;
@@ -23,6 +24,10 @@ const toggleButtons = (toggle) => {
     document.querySelectorAll('button').forEach(e => {
         e.disabled = toggle;
     });
+}
+
+const showReportBtn = () => {
+    document.querySelector("#reportBtn").disabled = false;
 }
 
 const copyFunction = () => {
@@ -90,14 +95,12 @@ const LoadLatests = () => {
             e.innerText = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear() + " " + d.getHours() + ':' + d.getMinutes();
         });
 
-        document.querySelector("#refreshBtn").innerHTML = "refresh";
         document.querySelector("#refreshBtn").disabled = false;
     });
 };
 
 const RefreshLatests = () => {
     document.querySelector("#refreshBtn").disabled = true;
-    document.querySelector("#refreshBtn").innerHTML = "refreshing";
     LoadLatests();
 };
 
@@ -128,7 +131,7 @@ document.querySelector("#reportBtn").addEventListener("click", () => {
     reportFunction();
 });
 document.querySelector("#refreshBtn").addEventListener("click", () => {
-    LoadLatests();
+    RefreshLatests();
 });
 
 let queryParams = new URLSearchParams(window.location.search);
