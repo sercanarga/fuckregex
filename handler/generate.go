@@ -26,6 +26,20 @@ func Generate(ctx *gin.Context) {
 		return
 	}
 
+	var response db_model.Responses
+	db.DB.Raw("SELECT * FROM responses WHERE input_text = ?", userInput).Scan(&response)
+
+	if response.ID != "" {
+		ctx.JSON(200, api_model.APIResponse{
+			ResponseID:    response.ID,
+			InputText:     response.InputText,
+			ResponseText:  response.ResponseText,
+			ResponseToken: response.ResponseToken,
+			ResponseTime:  response.CreatedDate,
+		})
+		return
+	}
+
 	aiRequest, err := internal.OpenAIRequest(req)
 	if err != nil {
 		ctx.JSON(500, api_model.APIError{

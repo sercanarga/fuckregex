@@ -155,6 +155,3 @@ if (queryParams.get("id") != null) {
 }
 
 RefreshLatests();
-setInterval(() => {
-    RefreshLatests();
-}, 5000);
