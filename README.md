@@ -22,7 +22,7 @@ Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) installed on y
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/fuckregex.git
+git clone https://github.com/sercanarga/fuckregex.git
 ````
 
 2. Change to the project directory:
@@ -37,19 +37,19 @@ cd fuckregex
 go mod tidy
 ```
 
-4. Run the project:
+4. Run the API service:
+
+```bash
+go run cmd/api/main.go
+```
+
+5. Run the web service:
 
 ```bash
 go run main.go
 ```
 
-5. Open your web browser and visit `http://localhost:PORT` (replace `PORT` with the port number specified in the configuration).
-
-## Usage
-
-1. (Add a step-by-step guide on how to use the application)
-2. ...
-3. ...
+5. Open your web browser and visit `http://localhost:8181` (replace `8181` with the port number specified in the configuration).
 
 ## Contributing
 
