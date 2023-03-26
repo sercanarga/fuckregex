@@ -40,7 +40,36 @@ func Generate(ctx *gin.Context) {
 		return
 	}
 
-	aiRequest, err := internal.OpenAIRequest(req)
+	validateRequest, err := internal.OpenAIRequest(req, true, 10)
+	if err != nil {
+		ctx.JSON(500, api_model.APIError{
+			ErrorCode:    500,
+			ErrorMessage: "Internal server error",
+			ResponseTime: time.Now().Unix(),
+		})
+		log.Println(err)
+		return
+	}
+
+	if validateRequest.Error.Message != "" {
+		ctx.JSON(500, api_model.APIError{
+			ErrorCode:    500,
+			ErrorMessage: validateRequest.Error.Message,
+			ResponseTime: time.Now().Unix(),
+		})
+		return
+	}
+
+	if validateRequest.Choices[0].Message.Content != "true" {
+		ctx.JSON(400, api_model.APIError{
+			ErrorCode:    400,
+			ErrorMessage: "Invalid request",
+			ResponseTime: time.Now().Unix(),
+		})
+		return
+	}
+
+	aiRequest, err := internal.OpenAIRequest(req, false, 200)
 	if err != nil {
 		ctx.JSON(500, api_model.APIError{
 			ErrorCode:    500,

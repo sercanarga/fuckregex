@@ -12,6 +12,7 @@ const printError = (error) => {
 }
 
 const printResponse = (responseText, responseId, responseToken, ResponseTime) => {
+    document.querySelector("#response").style.background = "#fff518a1";
     updateUrlID(responseId);
     showReportBtn();
     document.querySelector("#responseText").innerHTML = responseText;
