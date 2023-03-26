@@ -92,7 +92,7 @@ const LoadLatests = () => {
         document.querySelector("#latest").innerHTML = data.ResponseText;
         document.querySelectorAll('#latest li span').forEach(e => {
             let d = new Date(e.innerText * 1000);
-            e.innerText = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear() + " " + d.getHours() + ':' + d.getMinutes();
+            e.innerText = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear().toString().slice(-2) + " " + String(d.getMinutes()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
         });
 
         document.querySelector("#refreshBtn").disabled = false;
