@@ -63,7 +63,7 @@ go run main.go
 
 ## Contributing
 
-We welcome contributions! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute to this project.
+We welcome contributions from the community! You can open PRs and issues to help us improve the project.
 
 ## To-Do
 
