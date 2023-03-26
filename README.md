@@ -76,4 +76,4 @@ We welcome contributions from the community! You can open PRs and issues to help
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/sercanarga/fuckregex/blob/main/LICENSE).
