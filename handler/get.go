@@ -21,7 +21,7 @@ func Get(ctx *gin.Context) {
 	}
 
 	var response db_model.Responses
-	db.DB.Raw("SELECT * FROM responses WHERE id = ?", req.ID).Scan(&response)
+	db.DB.Raw("SELECT id FROM responses WHERE id = ?", req.ID).Scan(&response)
 
 	if response.ID == "" {
 		ctx.JSON(400, api_model.APIError{
