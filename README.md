@@ -15,7 +15,7 @@ These instructions will help you set up and run the project on your local machin
 
 ### Prerequisites
 
-Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) installed on your system:
+Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) and postgresql database installed on your system:
 
 ### Installation
 
@@ -31,25 +31,32 @@ git clone https://github.com/sercanarga/fuckregex.git
 cd fuckregex
 ```
 
-3. Install dependencies:
+3. Modify `.env` file:
+```bash
+nano .env
+```
+
+4. Create a postgresql database using the sql file under the `resources` directory.
+
+5. Install dependencies:
 
 ```bash
 go mod tidy
 ```
 
-4. Run the API service:
+6. Run the API service:
 
 ```bash
 go run cmd/api/main.go
 ```
 
-5. Run the web service:
+7. Run the web service:
 
 ```bash
 go run main.go
 ```
 
-5. Open your web browser and visit `http://localhost:8181` (replace `8181` with the port number specified in the configuration).
+8. Open your web browser and visit `http://localhost:8181` (replace `8181` with the port number specified in the configuration).
 
 ## Contributing
 
