@@ -15,7 +15,7 @@ These instructions will help you set up and run the project on your local machin
 
 ### Prerequisites
 
-Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) and postgresql database installed on your system:
+Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) and [postgresql](https://www.postgresql.org/) database installed on your system:
 
 ### Installation
 
