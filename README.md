@@ -25,7 +25,7 @@ Ensure you have [golang](https://golang.org/dl/) (v1.20 or later) installed on y
 git clone https://github.com/sercanarga/fuckregex.git
 ````
 
-2. Change to the project directory:
+2. Go to the project directory:
 
 ```bash
 cd fuckregex
