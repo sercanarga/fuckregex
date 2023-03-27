@@ -67,8 +67,8 @@ We welcome contributions from the community! You can open PRs and issues to help
 
 ## To-Do
 
-- [ ] Improve security measures
-- [ ] Implement request moderation for ChatGPT submissions
+- [x] Implement request moderation for ChatGPT submissions
+- [x] Improve security measures
 - [ ] Add the ability to interpret entered regex
 - [ ] Introduce regex validation for generated patterns
 - [ ] Generate regex usage examples in popular programming languages
