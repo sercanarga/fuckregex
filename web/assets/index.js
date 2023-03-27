@@ -134,6 +134,9 @@ document.querySelector("#reportBtn").addEventListener("click", () => {
 document.querySelector("#refreshBtn").addEventListener("click", () => {
     RefreshLatests();
 });
+document.querySelector("#showBtn").addEventListener("click", () => {
+    window.open('https://regex101.com/?regex='+encodeURI(document.querySelector('#responseText').innerText), '_blank');
+});
 
 let queryParams = new URLSearchParams(window.location.search);
 if (queryParams.get("id") != null) {
