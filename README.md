@@ -77,3 +77,39 @@ We welcome contributions from the community! You can open PRs and issues to help
 ## License
 
 This project is licensed under the [MIT License](https://github.com/sercanarga/fuckregex/blob/main/LICENSE).
+
+## Contributors
+Thanks go to these wonderful people
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/ertugrulturan">
+          <img src="https://avatars.githubusercontent.com/u/60829297?v=4" width="100px;" alt=""/>
+          <br />
+          <sub>
+            <b>Ertuğrul TURAN</b>
+          </sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sametcodes">
+          <img src="https://avatars.githubusercontent.com/u/9467273?v=4" width="100px;" alt=""/>
+          <br />
+          <sub>
+            <b>Samet</b>
+          </sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/lordixir">
+          <img src="https://avatars.githubusercontent.com/u/38049901?v=4" width="100px;" alt=""/>
+          <br />
+          <sub>
+            <b>Murat</b>
+          </sub>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
