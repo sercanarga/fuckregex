@@ -93,7 +93,7 @@ const LoadLatests = () => {
         document.querySelector("#latest").innerHTML = data.ResponseText;
         document.querySelectorAll('#latest li span').forEach(e => {
             let d = new Date(e.innerText * 1000);
-            e.innerText = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear().toString().slice(-2) + " " + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+            e.innerText = d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear().toString().slice(-2) + " " + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
         });
 
         document.querySelector("#refreshBtn").disabled = false;
@@ -135,7 +135,13 @@ document.querySelector("#refreshBtn").addEventListener("click", () => {
     RefreshLatests();
 });
 document.querySelector("#showBtn").addEventListener("click", () => {
-    window.open('https://regex101.com/?regex='+encodeURI(document.querySelector('#responseText').innerText), '_blank');
+    const value = document.querySelector('#responseText').innerText;
+    var encoded_value = encodeURIComponent(value);
+
+    if (encoded_value.startsWith("/")) encoded_value = encoded_value.substring(1);
+    if (encoded_value.endsWith("/")) encoded_value = encoded_value.substring(0, encoded_value.length - 1);
+
+    window.open('https://regex101.com/?regex=' + encoded_value, '_blank');
 });
 
 let queryParams = new URLSearchParams(window.location.search);
